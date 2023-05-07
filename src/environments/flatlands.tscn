@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://xiyuc81ck5a"]
+
+[ext_resource type="PackedScene" uid="uid://dn5lgdwouf8t3" path="res://entities/snake.tscn" id="1_1sdar"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aq63t"]
+size = Vector2(177, 168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ioarf"]
+size = Vector2(64.1194, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l10pa"]
+size = Vector2(222.932, 97.2854)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bemf3"]
+radius = 39.0512
+
+[node name="Flatlands" type="Node2D"]
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(-817, -12)
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+position = Vector2(344, 158)
+shape = SubResource("RectangleShape2D_aq63t")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(98, 67)
+scale = Vector2(59.4828, 3.12753)
+shape = SubResource("RectangleShape2D_ioarf")
+
+[node name="Snake" parent="." instance=ExtResource("1_1sdar")]
+position = Vector2(-27, 79)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(190, 80)
+rotation = -0.611808
+scale = Vector2(0.0292125, 0.869175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-5992.11, 59.6805)
+scale = Vector2(59.4828, 3.12753)
+shape = SubResource("RectangleShape2D_l10pa")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(-270, 4)
+shape = SubResource("CircleShape2D_bemf3")

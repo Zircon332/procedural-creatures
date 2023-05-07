@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn5lgdwouf8t3"]
+
+[ext_resource type="Script" path="res://entities/snake.gd" id="1_1iriy"]
+[ext_resource type="PackedScene" uid="uid://cippuu4ttc0hc" path="res://entities/bodies/verlet_body/verlet_body.tscn" id="2_p5nrk"]
+[ext_resource type="PackedScene" uid="uid://dl4fov1vjs1xj" path="res://entities/bodies/body.tscn" id="2_tcrn2"]
+[ext_resource type="Script" path="res://components/movement/key_input_movement_component.gd" id="3_jf2ni"]
+
+[node name="Snake" type="Node2D"]
+script = ExtResource("1_1iriy")
+
+[node name="Body" parent="." instance=ExtResource("2_tcrn2")]
+
+[node name="MovementComponent" type="Node" parent="Body"]
+script = ExtResource("3_jf2ni")
+
+[node name="VetvetBody" parent="Body" instance=ExtResource("2_p5nrk")]
+position = Vector2(0, 8)
+
+[node name="VetvetBody" parent="Body/VetvetBody" instance=ExtResource("2_p5nrk")]
+
+[node name="VetvetBody" parent="Body/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+position = Vector2(0, 8)
+
+[node name="VetvetBody" parent="Body/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+position = Vector2(1, 8)
+
+[node name="VetvetBody" parent="Body/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+position = Vector2(0, 9)
+
+[node name="VetvetBody" parent="Body/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+position = Vector2(0, 9)
+
+[node name="VetvetBody" parent="Body/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+position = Vector2(0, 9)
+
+[node name="VetvetBody" parent="Body/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+position = Vector2(0, 9)
+
+[node name="VetvetBody" parent="Body/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+position = Vector2(0, 9)
+
+[node name="VetvetBody" parent="Body/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+position = Vector2(0, 9)
