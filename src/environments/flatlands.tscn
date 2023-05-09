@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://xiyuc81ck5a"]
+[gd_scene load_steps=6 format=3 uid="uid://c5yr4n6b0fqxw"]
 
-[ext_resource type="PackedScene" path="res://entities/snake.tscn" id="1_1sdar"]
+[ext_resource type="PackedScene" uid="uid://c7351l0eu2kv1" path="res://entities/creatures/snake.tscn" id="1_1sdar"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aq63t"]
 size = Vector2(177, 168)

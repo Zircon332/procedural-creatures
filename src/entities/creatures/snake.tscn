@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7351l0eu2kv1"]
+
+[ext_resource type="Script" path="res://entities/creatures/snake.gd" id="1_1iriy"]
+[ext_resource type="PackedScene" uid="uid://bujuyykx8xsnc" path="res://entities/bodies/joints/verlet_body/verlet_body.tscn" id="2_p5nrk"]
+
+[node name="Snake" type="Node2D"]
+script = ExtResource("1_1iriy")
+
+[node name="VetvetBody" parent="." instance=ExtResource("2_p5nrk")]
+position = Vector2(-3, -99)
+
+[node name="VetvetBody" parent="VetvetBody" instance=ExtResource("2_p5nrk")]
+
+[node name="VetvetBody" parent="VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+position = Vector2(0, 8)
+
+[node name="VetvetBody" parent="VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+position = Vector2(1, 8)
+
+[node name="VetvetBody" parent="VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+position = Vector2(0, 9)
+
+[node name="VetvetBody" parent="VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+position = Vector2(0, 9)
+
+[node name="VetvetBody" parent="VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+position = Vector2(0, 9)
+
+[node name="VetvetBody" parent="VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+position = Vector2(0, 9)
+
+[node name="VetvetBody" parent="VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+position = Vector2(0, 9)
+
+[node name="VetvetBody" parent="VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+position = Vector2(0, 9)

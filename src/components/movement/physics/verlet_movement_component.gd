@@ -4,22 +4,25 @@ class_name VerletMovementComponent
 ## Verlet Integration
 ## The nodes are linked with the parent
 
-@export var resting_distance := 20
-@export var tear_distance := 10
-@export var stiffness := 1.5
+@export var resting_distance := 50
+@export var tear_distance := 100
+@export var stiffness := 1
 
 
 func physics_process(_delta):
-	follow_parent_joint(_delta)
+	if parent.get("parent_joint"):
+		solve_verlet(_delta)
 
 
-func follow_parent_joint(_delta):
-	move_toward_parent(_delta)
-
-
-func move_toward_parent(_delta):
+func solve_verlet(_delta):
 	var difference_from_rest = (resting_distance - distance_to_parent()) / distance_to_parent()
-	parent.velocity += vector_distance_to_parent() * difference_from_rest * stiffness
+	var velocity_offset = vector_distance_to_parent() * difference_from_rest * stiffness * 0.5
+	
+	parent.velocity += velocity_offset 
+	parent.parent_joint.velocity -= velocity_offset
+	
+	if distance_to_parent() > tear_distance:
+		parent.position = parent.position.normalized() * tear_distance
 
 
 func distance_to_parent():

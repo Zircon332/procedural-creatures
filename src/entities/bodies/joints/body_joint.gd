@@ -4,7 +4,7 @@ class_name BodyJoint
 
 @export var size := 10
 @export var gravity := 980
-@export var friction := 0.1
+@export var friction := 0.01
 @export var angle_max := 100.0
 @export var angle_min := 10.0
 
@@ -16,6 +16,7 @@ var angle := 0.0
 @onready var parent_joint : get = _get_parent_joint
 @onready var segment_line := $SegmentLine
 
+var is_dragged = false
 
 func _get_parent_joint():
 	if not parent_joint:
@@ -52,3 +53,27 @@ func _process(_delta):
 	for child in get_children():
 		if child is BodyJoint:
 			segment_line.points[1] = child.position
+
+
+func _physics_process(_delta):
+	mouse_drag(_delta)
+
+
+func mouse_drag(_delta):
+	if Input.is_action_just_pressed("left_mouse"):
+		if is_mouse_hovering():
+			is_dragged = true
+			enable_gravity = false
+	
+	if Input.is_action_just_released("left_mouse"):
+		is_dragged = false
+		enable_gravity = true
+		
+	if is_dragged:
+		velocity += global_position.direction_to(get_global_mouse_position()) * 50 * global_position.distance_to(get_global_mouse_position()) * _delta
+
+
+func is_mouse_hovering():
+	if global_position.distance_to(get_global_mouse_position()) < size:
+		return true
+	return false

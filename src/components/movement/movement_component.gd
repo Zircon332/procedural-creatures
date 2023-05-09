@@ -28,7 +28,8 @@ func apply_friction(_delta):
 	if not parent.enable_friction:
 		return
 	
-	parent.velocity = lerp(parent.velocity, Vector2.ZERO, parent.friction)
+	parent.velocity.x = lerp(parent.velocity.x, 0.0, parent.friction * 2)
+	parent.velocity.y = lerp(parent.velocity.y, 0.0, parent.friction)
 
 
 func unmove_children_bodies(_prev_global_pos):
