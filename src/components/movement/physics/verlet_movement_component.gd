@@ -4,9 +4,9 @@ class_name VerletMovementComponent
 ## Verlet Integration
 ## The nodes are linked with the parent
 
-@export var resting_distance := 50
-@export var tear_distance := 100
-@export var stiffness := 1
+@export var resting_distance := 20
+@export var tear_distance := 40
+@export var stiffness := 5
 
 
 func physics_process(_delta):

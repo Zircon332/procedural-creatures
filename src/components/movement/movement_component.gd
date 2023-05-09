@@ -30,6 +30,9 @@ func apply_friction(_delta):
 	
 	parent.velocity.x = lerp(parent.velocity.x, 0.0, parent.friction * 2)
 	parent.velocity.y = lerp(parent.velocity.y, 0.0, parent.friction)
+	
+	if parent.is_on_floor():
+		parent.velocity.x = lerp(parent.velocity.x, 0.0, parent.friction * 10)
 
 
 func unmove_children_bodies(_prev_global_pos):
@@ -47,8 +50,6 @@ func apply_angle_restrictions():
 	var angle_difference = 0
 	if abs(parent.angle) > parent.angle_max:
 		angle_difference = abs(abs(parent.angle) - parent.angle_max)
-	
-#	parent.velocity = parent.velocity.rotated(deg_to_rad(-angle_difference))
 
 
 func calculate_angle():
