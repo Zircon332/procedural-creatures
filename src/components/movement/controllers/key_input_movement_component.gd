@@ -6,7 +6,7 @@ class_name FollowMouseMovementComponent
 
 
 func _ready():
-	has_gravity = true
+	parent.enable_gravity = true
 
 
 func physics_process(_delta):

@@ -3,7 +3,7 @@ class_name KeyInputMovementComponent
 
 
 func _ready():
-	has_gravity = false
+	parent.enable_gravity = false
 
 
 func physics_process(delta):

@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dn5lgdwouf8t3"]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://entities/snake.gd" id="1_1iriy"]
-[ext_resource type="PackedScene" uid="uid://cippuu4ttc0hc" path="res://entities/bodies/verlet_body/verlet_body.tscn" id="2_p5nrk"]
-[ext_resource type="PackedScene" uid="uid://dl4fov1vjs1xj" path="res://entities/bodies/body.tscn" id="2_tcrn2"]
-[ext_resource type="Script" path="res://components/movement/key_input_movement_component.gd" id="3_jf2ni"]
+[ext_resource type="PackedScene" path="res://entities/bodies/joints/verlet_body/verlet_body.tscn" id="2_p5nrk"]
+[ext_resource type="PackedScene" uid="uid://ch4goqwjcn0dy" path="res://entities/bodies/joints/body_joint.tscn" id="2_tcrn2"]
+[ext_resource type="Script" path="res://components/movement/controllers/key_input_movement_component.gd" id="3_jf2ni"]
 
 [node name="Snake" type="Node2D"]
 script = ExtResource("1_1iriy")

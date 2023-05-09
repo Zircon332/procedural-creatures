@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://cippuu4ttc0hc"]
-
-[ext_resource type="PackedScene" uid="uid://dl4fov1vjs1xj" path="res://entities/bodies/body.tscn" id="1_wxsq6"]
-[ext_resource type="Script" path="res://components/movement/verlet_movement_component.gd" id="2_788g0"]
-
-[node name="VerletBody" instance=ExtResource("1_wxsq6")]
-
-[node name="VerletMovementComponent" type="Node" parent="." index="3"]
-script = ExtResource("2_788g0")
