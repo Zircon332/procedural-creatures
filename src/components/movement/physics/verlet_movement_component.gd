@@ -4,8 +4,8 @@ class_name VerletMovementComponent
 ## Verlet Integration
 ## The nodes are linked with the parent
 
-@export var resting_distance := 20
-@export var tear_distance := 40
+@export var resting_distance := 10
+@export var tear_distance := 20
 @export var stiffness := 5
 
 
@@ -23,6 +23,16 @@ func solve_verlet(_delta):
 	
 	if distance_to_parent() > tear_distance:
 		parent.position = parent.position.normalized() * tear_distance
+	
+#	if distance_to_parent() > tear_distance:
+#		var children_bodies = parent.get_children_bodies(false)
+#		for body in children_bodies:
+#			var pos = body.global_position
+#			parent.remove_child(body)
+#			get_tree().root.get_child(0).add_child(body)
+#			parent.segment_line.visible = false
+#			body.parent_joint = null
+#			body.global_position = pos
 
 
 func distance_to_parent():

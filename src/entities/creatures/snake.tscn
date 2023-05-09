@@ -1,36 +1,48 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7351l0eu2kv1"]
+[gd_scene load_steps=6 format=3 uid="uid://c7351l0eu2kv1"]
 
 [ext_resource type="Script" path="res://entities/creatures/snake.gd" id="1_1iriy"]
 [ext_resource type="PackedScene" uid="uid://bujuyykx8xsnc" path="res://entities/bodies/joints/verlet_body/verlet_body.tscn" id="2_p5nrk"]
+[ext_resource type="PackedScene" uid="uid://ch4goqwjcn0dy" path="res://entities/bodies/joints/body_joint.tscn" id="2_tcrn2"]
+[ext_resource type="Script" path="res://components/movement/controllers/key_input_movement_component.gd" id="3_jf2ni"]
+[ext_resource type="Texture2D" uid="uid://b5mk74mbgghe6" path="res://icon.png" id="5_d6lp0"]
 
-[node name="Snake" type="Node2D"]
+[node name="Snake" type="RigidBody2D"]
 script = ExtResource("1_1iriy")
 
-[node name="VetvetBody" parent="." instance=ExtResource("2_p5nrk")]
-position = Vector2(-3, -99)
+[node name="BodyJoint" parent="." instance=ExtResource("2_tcrn2")]
 
-[node name="VetvetBody" parent="VetvetBody" instance=ExtResource("2_p5nrk")]
+[node name="Node" type="Node" parent="BodyJoint"]
+script = ExtResource("3_jf2ni")
 
-[node name="VetvetBody" parent="VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+[node name="VetvetBody" parent="BodyJoint" instance=ExtResource("2_p5nrk")]
+position = Vector2(0, 13)
+
+[node name="VetvetBody" parent="BodyJoint/VetvetBody" instance=ExtResource("2_p5nrk")]
+
+[node name="VetvetBody" parent="BodyJoint/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
 position = Vector2(0, 8)
 
-[node name="VetvetBody" parent="VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+[node name="VetvetBody" parent="BodyJoint/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
 position = Vector2(1, 8)
 
-[node name="VetvetBody" parent="VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+[node name="VetvetBody" parent="BodyJoint/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
 position = Vector2(0, 9)
 
-[node name="VetvetBody" parent="VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+[node name="VetvetBody" parent="BodyJoint/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
 position = Vector2(0, 9)
 
-[node name="VetvetBody" parent="VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+[node name="VetvetBody" parent="BodyJoint/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
 position = Vector2(0, 9)
 
-[node name="VetvetBody" parent="VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+[node name="VetvetBody" parent="BodyJoint/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
 position = Vector2(0, 9)
 
-[node name="VetvetBody" parent="VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+[node name="VetvetBody" parent="BodyJoint/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
 position = Vector2(0, 9)
 
-[node name="VetvetBody" parent="VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
+[node name="VetvetBody" parent="BodyJoint/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody/VetvetBody" instance=ExtResource("2_p5nrk")]
 position = Vector2(0, 9)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1875, 0.1875)
+texture = ExtResource("5_d6lp0")

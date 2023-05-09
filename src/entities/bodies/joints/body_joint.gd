@@ -32,13 +32,24 @@ func _ready():
 	segment_line.default_color = Color.RED * (1+get_children_bodies_count()) / 10.0
 
 
-func get_children_bodies_count():
+func get_children_bodies_count(deep = true):
 	var children_body_count = 0
 	for child in get_children():
 		if child is BodyJoint:
 			children_body_count += 1
-			children_body_count += child.get_children_bodies_count()
+			if deep:
+				children_body_count += child.get_children_bodies_count(deep)
 	return children_body_count
+
+
+func get_children_bodies(deep = true):
+	var children_bodies = []
+	for child in get_children():
+		if child is BodyJoint:
+			children_bodies.append(child)
+			if deep:
+				children_bodies.append_array(child.get_children_bodies(deep))
+	return children_bodies
 
 
 func get_node_components():

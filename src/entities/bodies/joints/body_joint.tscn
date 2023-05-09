@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://entities/bodies/joints/body_joint.gd" id="1_sonsp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8mqxy"]
-radius = 7.07107
+radius = 14.0
 
 [node name="BodyJoint" type="CharacterBody2D"]
 collision_layer = 2
